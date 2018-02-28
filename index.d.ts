@@ -42,6 +42,6 @@ declare class Adonis$RouteManager {
   ): string | null;
 }
 
-declare function use(path: 'Env'): Adonis$Env;
-declare function use(path: 'Config'): Adonis$Config;
-declare function use(path: 'Route'): Adonis$RouteManager;
+declare function use(path: "Env"): Adonis$Env;
+declare function use(path: "Config"): Adonis$Config;
+declare function use(path: "Route"): Adonis$RouteManager;
