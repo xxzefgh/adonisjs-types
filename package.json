@@ -1,0 +1,9 @@
+{
+  "name": "adonis4-types",
+  "version": "1.0.0",
+  "description": "Adonis 4 TypeScript definitions",
+  "main": "index.js",
+  "keywords": ["adonis", "typescript", "types"],
+  "author": "Mirza Brunjadze <brunjadzem@gmail.com>",
+  "license": "MIT"
+}
