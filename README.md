@@ -3,12 +3,15 @@
 
     `npm i --save adonis4-types`
 2. Add following `tsconfig.json` file in your project root:
-    
+
     ```json
     {
       "compilerOptions": {
         "allowJs": true,
-        "moduleResolution": "node"
+        "moduleResolution": "node",
+        "lib": [
+          "es2015"
+        ]
       },
       "files": [
         "node_modules/adonis4-types/index.d.ts"
