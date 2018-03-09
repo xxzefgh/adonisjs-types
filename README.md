@@ -14,7 +14,7 @@
         ]
       },
       "files": [
-        "node_modules/adonis4-types/index.d.ts"
+        "node_modules/adonisjs-types/index.d.ts"
       ],
       "include": [
         "./**/*.js"
