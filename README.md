@@ -1,7 +1,7 @@
 ### Installation
-1. Install `adonis4-types` package:
+1. Install `adonisjs-types` package:
 
-    `npm i --save adonis4-types`
+    `npm i --save adonisjs-types`
 2. Add following `tsconfig.json` file in your project root:
 
     ```json
