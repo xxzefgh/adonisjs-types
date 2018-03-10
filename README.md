@@ -26,3 +26,24 @@
     ```
 
 This is a minimal required configuration for types to work. [You can tweak it further](http://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
+
+### Usage
+Types are provided through `use` method, for example: `const Env = use('Env')` will be correctly typed. If you want to get intellisense on controller methods, jsDoc will help:
+```js
+class WelcomeController {
+  /**
+   * @param {Adonis.Http.Context} ctx
+   */
+  hello(ctx) {
+    //
+  }
+}
+
+// Or, if you want destructuring:
+
+class WelcomeController {
+  hello(/** @type Adonis.Http.Context */ { request, response }) {
+    //
+  }
+}
+```
