@@ -255,7 +255,7 @@ declare function use(namespace: AdonisNamespaces.Command): Adonis.WorkInProgress
 declare function use(namespace: AdonisNamespaces.Config): Adonis.Config
 declare function use(namespace: AdonisNamespaces.Database): Adonis.WorkInProgress
 declare function use(namespace: AdonisNamespaces.Env): Adonis.Env
-declare function use(namespace: AdonisNamespaces.Event): Adonis.WorkInProgress
+declare function use(namespace: AdonisNamespaces.Event): Adonis.Event
 declare function use(namespace: AdonisNamespaces.Factory): Adonis.WorkInProgress
 declare function use(namespace: AdonisNamespaces.Hash): Adonis.Hash
 declare function use(namespace: AdonisNamespaces.Helpers): Adonis.WorkInProgress
