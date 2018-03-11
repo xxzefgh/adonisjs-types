@@ -15,6 +15,30 @@ declare namespace Adonis {
         set(key: string, value: any): void
     }
 
+    type EventListeners = string | string[] | Function
+
+    class Event {
+        getListeners(event: string): Array<string | Function>
+        getListenersAny(): Array<string | Function>
+        hasListeners(event: string): boolean
+        listenersCount(event: string): number
+        times(number: number): Event
+        on(event: string, listeners: EventListeners): void
+        when(event: string, listeners: EventListeners): void
+        once(event: string, listeners: EventListeners): void
+        any(listeners: EventListeners): void
+        onAny(listeners: EventListeners): void
+        emit(event: string, ...args: any[]): void
+        fire(event: string, ...args: any[]): void
+        off(event: string, listeners: EventListeners): void
+        offAny(listeners: EventListeners): void
+        removeListener(event: string, listeners: EventListeners): void
+        removeAllListeners(event: string): void
+        setMaxListeners(number: number): void
+        fake(): void
+        restore(): void
+    }
+
     class Hash {
         make(value: string, rounds: number): Promise<string>
         verify(value: string, hash: string): Promise<boolean>
