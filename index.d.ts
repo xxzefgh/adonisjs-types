@@ -1,5 +1,5 @@
 declare namespace Adonis {
-    type WorkInProgress = null
+    type WorkInProgress = any
 
     class Config {
         syncWithFileSystem(): void
