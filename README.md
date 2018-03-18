@@ -1,7 +1,7 @@
 ### Installation
 1. Install `adonisjs-types` package:
 
-    `npm i --save adonisjs-types`
+    `npm i --save-dev adonisjs-types`
 2. Add following `tsconfig.json` file in your project root:
 
     ```json
