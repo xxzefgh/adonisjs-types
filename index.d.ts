@@ -298,7 +298,6 @@ declare namespace AdonisNamespaces {
     type Helpers = 'Helpers' | 'Adonis/Src/Helpers'
     type Logger = 'Logger' | 'Adonis/Src/Logger'
     type Lucid = 'Lucid' | 'Adonis/Src/Lucid'
-    type Middleware = 'Middleware' | 'Adonis/Src/Middleware'
     type Route = 'Route' | 'Adonis/Src/Route'
     type Schema = 'Schema' | 'Adonis/Src/Schema'
     type View = 'View' | 'Adonis/Src/View'
@@ -316,7 +315,6 @@ declare function use(namespace: AdonisNamespaces.Hash): Adonis.Hash
 declare function use(namespace: AdonisNamespaces.Helpers): Adonis.Helpers
 declare function use(namespace: AdonisNamespaces.Logger): Adonis.WorkInProgress
 declare function use(namespace: AdonisNamespaces.Lucid): Adonis.WorkInProgress
-declare function use(namespace: AdonisNamespaces.Middleware): Adonis.WorkInProgress
 declare function use(namespace: AdonisNamespaces.Route): Adonis.Route.Manager
 declare function use(namespace: AdonisNamespaces.Schema): Adonis.WorkInProgress
 declare function use(namespace: AdonisNamespaces.View): Adonis.View
