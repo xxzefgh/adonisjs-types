@@ -62,6 +62,35 @@ declare namespace Adonis {
         verify(value: string, hash: string): Promise<boolean>
     }
 
+    class Helpers {
+        configPath(): string
+        appRoot(toFile?: ''): string
+        publicPath(toFile?: ''): string
+        resourcesPath(toFile?: ''): string
+        viewsPath(toFile?: ''): string
+        databasePath(toFile?: ''): string
+        migrationsPath(toFile?: ''): string
+        seedsPath(toFile?: ''): string
+        tmpPath(toFile?: ''): string
+        promisify(fn: Function, options: Object): Promise<any>
+        isAceCommand(): boolean
+    }
+
+    type LogLevel = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7
+
+    class Logger {
+        level: LogLevel
+        log(level: LogLevel, message: string, ...options: any[]): void
+        debug(message: string, ...options: any[]): void
+        info(message: string, ...options: any[]): void
+        notice(message: string, ...options: any[]): void
+        warning(message: string, ...options: any[]): void
+        error(message: string, ...options: any[]): void
+        crit(message: string, ...options: any[]): void
+        alert(message: string, ...options: any[]): void
+        emerg(message: string, ...options: any[]): void
+    }
+
     namespace Http {
         class Request {
             body: Object
@@ -284,7 +313,7 @@ declare function use(namespace: AdonisNamespaces.Encryption): Adonis.Encryption
 declare function use(namespace: AdonisNamespaces.Exception): Adonis.Exception
 declare function use(namespace: AdonisNamespaces.Factory): Adonis.WorkInProgress
 declare function use(namespace: AdonisNamespaces.Hash): Adonis.Hash
-declare function use(namespace: AdonisNamespaces.Helpers): Adonis.WorkInProgress
+declare function use(namespace: AdonisNamespaces.Helpers): Adonis.Helpers
 declare function use(namespace: AdonisNamespaces.Logger): Adonis.WorkInProgress
 declare function use(namespace: AdonisNamespaces.Lucid): Adonis.WorkInProgress
 declare function use(namespace: AdonisNamespaces.Middleware): Adonis.WorkInProgress
