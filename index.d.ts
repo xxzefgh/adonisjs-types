@@ -39,6 +39,24 @@ declare namespace Adonis {
         restore(): void
     }
 
+    class Encryption {
+        encrypt(input: string | number | Object): string
+        decrypt(cipherText: string): string | number | Object
+        base64Encode(input: string): string
+        base64Decode(encodedText: string): string
+        // base64Decode(encodedText: NodeBuffer): string
+    }
+
+    type ExceptionHandler = (error: any, ctx: Http.Context) => void
+
+    class Exception {
+        clear(): void
+        getHandler(name: string): Function | undefined
+        getReporter(name: string): Function | undefined
+        handle(name: string, callback: ExceptionHandler): Exception
+        handle(name: string, callback: ExceptionHandler): Exception
+    }
+
     class Hash {
         make(value: string, rounds: number): Promise<string>
         verify(value: string, hash: string): Promise<boolean>
@@ -121,6 +139,7 @@ declare namespace Adonis {
             request: Adonis.Http.Request
             response: Adonis.Http.Response
             view: Adonis.View
+            session: Adonis.Session
         }
 
         type Handler = (ctx: Context) => any
@@ -187,6 +206,10 @@ declare namespace Adonis {
         }
     }
 
+    class Session {
+        // TODO
+    }
+
     class View {
         engine: View.Engine
         global(name: string, value: any): void
@@ -235,14 +258,16 @@ declare namespace Adonis {
 }
 
 declare namespace AdonisNamespaces {
-    type Command = 'Command' | 'Adonis/Src/Command'
     type Config = 'Config' | 'Adonis/Src/Config'
     type Database = 'Database' | 'Adonis/Src/Database'
     type Env = 'Env' | 'Adonis/Src/Env'
     type Event = 'Event' | 'Adonis/Src/Event'
+    type Encryption = 'Encryption' | 'Adonis/Src/Encryption'
+    type Exception = 'Exception' | 'Adonis/Src/Exception'
     type Factory = 'Factory' | 'Adonis/Src/Factory'
     type Hash = 'Hash' | 'Adonis/Src/Hash'
     type Helpers = 'Helpers' | 'Adonis/Src/Helpers'
+    type Logger = 'Logger' | 'Adonis/Src/Logger'
     type Lucid = 'Lucid' | 'Adonis/Src/Lucid'
     type Middleware = 'Middleware' | 'Adonis/Src/Middleware'
     type Route = 'Route' | 'Adonis/Src/Route'
@@ -251,14 +276,16 @@ declare namespace AdonisNamespaces {
     type Ws = 'Ws' | 'Adonis/Addons/Ws'
 }
 
-declare function use(namespace: AdonisNamespaces.Command): Adonis.WorkInProgress
 declare function use(namespace: AdonisNamespaces.Config): Adonis.Config
 declare function use(namespace: AdonisNamespaces.Database): Adonis.WorkInProgress
 declare function use(namespace: AdonisNamespaces.Env): Adonis.Env
 declare function use(namespace: AdonisNamespaces.Event): Adonis.Event
+declare function use(namespace: AdonisNamespaces.Encryption): Adonis.Encryption
+declare function use(namespace: AdonisNamespaces.Exception): Adonis.Exception
 declare function use(namespace: AdonisNamespaces.Factory): Adonis.WorkInProgress
 declare function use(namespace: AdonisNamespaces.Hash): Adonis.Hash
 declare function use(namespace: AdonisNamespaces.Helpers): Adonis.WorkInProgress
+declare function use(namespace: AdonisNamespaces.Logger): Adonis.WorkInProgress
 declare function use(namespace: AdonisNamespaces.Lucid): Adonis.WorkInProgress
 declare function use(namespace: AdonisNamespaces.Middleware): Adonis.WorkInProgress
 declare function use(namespace: AdonisNamespaces.Route): Adonis.Route.Manager
