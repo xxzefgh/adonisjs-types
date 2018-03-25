@@ -235,6 +235,19 @@ declare namespace Adonis {
         }
     }
 
+    type HttpServer = any // node Server instance
+
+    class Server {
+        registerGlobal(middleware: string[]): Server
+        use(middleware: string[]): Server
+        registerNamed(middleware: string[]): Server
+        getInstance(): HttpServer
+        setInstance(httpInstance: HttpServer): void
+        handle(req: any, res: any): void
+        listen(host?: 'localhost', port?: 3333, callback?: Function): HttpServer
+        close(callback?: Function): void
+    }
+
     class Session {
         // TODO
     }
@@ -300,6 +313,7 @@ declare namespace AdonisNamespaces {
     type Lucid = 'Lucid' | 'Adonis/Src/Lucid'
     type Route = 'Route' | 'Adonis/Src/Route'
     type Schema = 'Schema' | 'Adonis/Src/Schema'
+    type Server = 'Server' | 'Adonis/Src/Server'
     type View = 'View' | 'Adonis/Src/View'
     type Ws = 'Ws' | 'Adonis/Addons/Ws'
 }
@@ -317,5 +331,6 @@ declare function use(namespace: AdonisNamespaces.Logger): Adonis.WorkInProgress
 declare function use(namespace: AdonisNamespaces.Lucid): Adonis.WorkInProgress
 declare function use(namespace: AdonisNamespaces.Route): Adonis.Route.Manager
 declare function use(namespace: AdonisNamespaces.Schema): Adonis.WorkInProgress
+declare function use(namespace: AdonisNamespaces.Server): Adonis.Server
 declare function use(namespace: AdonisNamespaces.View): Adonis.View
 declare function use(namespace: AdonisNamespaces.Ws): Adonis.WorkInProgress
