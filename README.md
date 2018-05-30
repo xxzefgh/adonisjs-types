@@ -11,7 +11,8 @@
         "moduleResolution": "node",
         "lib": [
           "es2015"
-        ]
+        ],
+        "sourceMap": true
       }
     }
     ```
