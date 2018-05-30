@@ -227,7 +227,7 @@ declare namespace Adonis {
             patch(route: string, handler: string | Http.Handler): Route
             delete(route: string, handler: string | Http.Handler): Route
             any(route: string, handler: string | Http.Handler): Route
-            on(route: string): Brisk
+            static on(route: string): Brisk
             match(url: string, verb: string, host?: string): Object | null
             group(callback: Function): Group
             group(name: string, callback: Function): Group
