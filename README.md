@@ -39,3 +39,9 @@ class WelcomeController {
   }
 }
 ```
+
+One practice is to keep using `.js` files (e.g. routes, migrations, models), provided by Adonis Framework.
+That way you can just hope your IDE is smart enough to correctly handle TS code.
+However, in order to utilise full TypeScript power, those `.js` files should be transformed
+(well, just renamed) to `.ts` files. Then, all .ts files may be compiled just by running `tsc`
+command (TypeScript must be already installed).
