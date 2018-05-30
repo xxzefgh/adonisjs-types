@@ -12,16 +12,7 @@
         "lib": [
           "es2015"
         ]
-      },
-      "files": [
-        "node_modules/adonisjs-types/index.d.ts"
-      ],
-      "include": [
-        "./**/*.js"
-      ],
-      "exclude": [
-        "node_modules"
-      ]
+      }
     }
     ```
 
