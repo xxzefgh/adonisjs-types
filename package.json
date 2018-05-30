@@ -11,6 +11,7 @@
   "author": "Mirza Brunjadze <brunjadzem@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@types/knex": "^0.14.14"
+    "@types/knex": "^0.14.14",
+    "@types/node": "^10.1.3"
   }
 }
