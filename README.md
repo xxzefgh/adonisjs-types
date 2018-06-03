@@ -7,10 +7,14 @@
     ```json
     {
       "compilerOptions": {
-        "allowJs": true,
         "moduleResolution": "node",
+        "target": "es5",
         "lib": [
           "es2015"
+        ],
+        "typeRoots": [
+          "./node_modules/@types",
+          "./node_modules/adonisjs-types"
         ],
         "sourceMap": true
       }
