@@ -1,3 +1,5 @@
+*⚠ ARCHIVED - Adonis frameowrk is being rewritten in TypeScript*
+
 ### Installation
 1. Install `adonisjs-types` package:
 
