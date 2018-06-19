@@ -1,4 +1,4 @@
-*⚠ ARCHIVED - Adonis frameowrk is being rewritten in TypeScript*
+*⚠ ARCHIVED - Adonis framework is being rewritten in TypeScript, see [adonisjs/adonis-framework/issues/871](https://github.com/adonisjs/adonis-framework/issues/871)*
 
 ### Installation
 1. Install `adonisjs-types` package:
