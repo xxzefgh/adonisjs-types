@@ -9,21 +9,17 @@
     ```json
     {
       "compilerOptions": {
-        "allowJs": true,
         "moduleResolution": "node",
+        "target": "es5",
         "lib": [
           "es2015"
-        ]
-      },
-      "files": [
-        "node_modules/adonisjs-types/index.d.ts"
-      ],
-      "include": [
-        "./**/*.js"
-      ],
-      "exclude": [
-        "node_modules"
-      ]
+        ],
+        "typeRoots": [
+          "./node_modules/@types",
+          "./node_modules/adonisjs-types"
+        ],
+        "sourceMap": true
+      }
     }
     ```
 
@@ -49,3 +45,10 @@ class WelcomeController {
   }
 }
 ```
+
+One practice is to keep using `.js` files (e.g. routes, migrations, models), provided by Adonis Framework.
+That way you can just hope your IDE is smart enough to correctly handle TS code.
+However, in order to utilise full TypeScript power, those `.js` files should be transformed
+(well, just renamed) to `.ts` files. Then, all .ts files may be compiled just by running `tsc`
+command (TypeScript must be already installed). You then can simplify your `tsconfig.json` by removing
+ `"allowJs": true,` line.

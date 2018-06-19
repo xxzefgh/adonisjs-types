@@ -1,3 +1,5 @@
+import * as knex from 'knex'
+
 declare namespace Adonis {
     type WorkInProgress = any
 
@@ -225,7 +227,7 @@ declare namespace Adonis {
             patch(route: string, handler: string | Http.Handler): Route
             delete(route: string, handler: string | Http.Handler): Route
             any(route: string, handler: string | Http.Handler): Route
-            on(route: string): Brisk
+            static on(route: string): Brisk
             match(url: string, verb: string, host?: string): Object | null
             group(callback: Function): Group
             group(name: string, callback: Function): Group
@@ -236,6 +238,11 @@ declare namespace Adonis {
     }
 
     type HttpServer = any // node Server instance
+
+    class Schema {
+        create(table:string, callback:(table:knex.TableBuilder) => void)
+        drop(table:string)
+    }
 
     class Server {
         registerGlobal(middleware: string[]): Server
@@ -318,19 +325,21 @@ declare namespace AdonisNamespaces {
     type Ws = 'Ws' | 'Adonis/Addons/Ws'
 }
 
-declare function use(namespace: AdonisNamespaces.Config): Adonis.Config
-declare function use(namespace: AdonisNamespaces.Database): Adonis.WorkInProgress
-declare function use(namespace: AdonisNamespaces.Env): Adonis.Env
-declare function use(namespace: AdonisNamespaces.Event): Adonis.Event
-declare function use(namespace: AdonisNamespaces.Encryption): Adonis.Encryption
-declare function use(namespace: AdonisNamespaces.Exception): Adonis.Exception
-declare function use(namespace: AdonisNamespaces.Factory): Adonis.WorkInProgress
-declare function use(namespace: AdonisNamespaces.Hash): Adonis.Hash
-declare function use(namespace: AdonisNamespaces.Helpers): Adonis.Helpers
-declare function use(namespace: AdonisNamespaces.Logger): Adonis.WorkInProgress
-declare function use(namespace: AdonisNamespaces.Lucid): Adonis.WorkInProgress
-declare function use(namespace: AdonisNamespaces.Route): Adonis.Route.Manager
-declare function use(namespace: AdonisNamespaces.Schema): Adonis.WorkInProgress
-declare function use(namespace: AdonisNamespaces.Server): Adonis.Server
-declare function use(namespace: AdonisNamespaces.View): Adonis.View
-declare function use(namespace: AdonisNamespaces.Ws): Adonis.WorkInProgress
+declare global {
+    function use(namespace: AdonisNamespaces.Config): typeof Adonis.Config
+    function use(namespace: AdonisNamespaces.Database): Adonis.WorkInProgress
+    function use(namespace: AdonisNamespaces.Env): typeof Adonis.Env
+    function use(namespace: AdonisNamespaces.Event): typeof Adonis.Event
+    function use(namespace: AdonisNamespaces.Encryption): typeof Adonis.Encryption
+    function use(namespace: AdonisNamespaces.Exception): typeof Adonis.Exception
+    function use(namespace: AdonisNamespaces.Factory): Adonis.WorkInProgress
+    function use(namespace: AdonisNamespaces.Hash): typeof Adonis.Hash
+    function use(namespace: AdonisNamespaces.Helpers): typeof Adonis.Helpers
+    function use(namespace: AdonisNamespaces.Logger): Adonis.WorkInProgress
+    function use(namespace: AdonisNamespaces.Lucid): Adonis.WorkInProgress
+    function use(namespace: AdonisNamespaces.Route): typeof Adonis.Route.Manager
+    function use(namespace: AdonisNamespaces.Schema): typeof Adonis.Schema
+    function use(namespace: AdonisNamespaces.Server): typeof Adonis.Server
+    function use(namespace: AdonisNamespaces.View): typeof Adonis.View
+    function use(namespace: AdonisNamespaces.Ws): Adonis.WorkInProgress
+}

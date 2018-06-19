@@ -9,5 +9,9 @@
     "types"
   ],
   "author": "Mirza Brunjadze <brunjadzem@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@types/knex": "^0.14.14",
+    "@types/node": "^10.1.3"
+  }
 }
