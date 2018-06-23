@@ -1,6 +1,6 @@
 declare namespace Adonis {
     type WorkInProgress = any
-
+   
     class Config {
         syncWithFileSystem(): void
         get(key: string, defaultValue?: any): any
@@ -89,6 +89,21 @@ declare namespace Adonis {
         crit(message: string, ...options: any[]): void
         alert(message: string, ...options: any[]): void
         emerg(message: string, ...options: any[]): void
+    }
+    
+    namespace Lucid {
+        interface ConstructableModel<t> extends Model{
+          new(): t
+        }
+
+        interface Model {
+           new(): Model
+           save(): Object
+           all(): Object
+           boot(): any
+           addHook(action: string, callback: string): any
+           hasMany(path: string): Object
+        }
     }
 
     namespace Http {
@@ -316,6 +331,7 @@ declare namespace AdonisNamespaces {
     type Server = 'Server' | 'Adonis/Src/Server'
     type View = 'View' | 'Adonis/Src/View'
     type Ws = 'Ws' | 'Adonis/Addons/Ws'
+    type Model = 'Model'
 }
 
 declare function use(namespace: AdonisNamespaces.Config): Adonis.Config
@@ -329,6 +345,7 @@ declare function use(namespace: AdonisNamespaces.Hash): Adonis.Hash
 declare function use(namespace: AdonisNamespaces.Helpers): Adonis.Helpers
 declare function use(namespace: AdonisNamespaces.Logger): Adonis.WorkInProgress
 declare function use(namespace: AdonisNamespaces.Lucid): Adonis.WorkInProgress
+declare function use(namespace: AdonisNamespaces.Model): Adonis.Lucid.Model
 declare function use(namespace: AdonisNamespaces.Route): Adonis.Route.Manager
 declare function use(namespace: AdonisNamespaces.Schema): Adonis.WorkInProgress
 declare function use(namespace: AdonisNamespaces.Server): Adonis.Server
